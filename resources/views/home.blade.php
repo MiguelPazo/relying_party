@@ -6,15 +6,15 @@
             <div class="col-sm-12">
                 <span id="message"></span>
             </div>
-            <div class="col-sm-6 col-sm-offset-3">
-                <button id="btn_send" class="btn btn-success btn-lg">
-                    Enviar mensaje
-                </button>
+            <div class="col-sm-6 col-sm-offset-3 text-center">
+                <a href="{{ env('IDP_URL') }}" id="btn_send" class="btn btn-success btn-lg">
+                    INGRESAR
+                </a>
 
             </div>
             <div class="row">
                 <div class="col-sm-12">
-                    <iframe id="receiver" src="http://oprovider.dev/frame" frameborder="0"></iframe>
+                    <iframe src="http://oprovider.dev/frame_sso" frameborder="0"></iframe>
                 </div>
             </div>
         </div>

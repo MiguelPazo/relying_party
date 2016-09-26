@@ -13,16 +13,17 @@ class AdminController extends Controller
         return view('admin');
     }
 
-    public function getData(Request $request)
+    public function getData()
     {
         $jResponse = [
             'data' => 'Zona Restringida'
         ];
 
-        $token = $request->header('Authorization');
-
-        dd($token);
-
         return response()->json($jResponse);
+    }
+
+    public function getLogout()
+    {
+
     }
 }

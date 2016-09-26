@@ -1,7 +1,5 @@
-app.controller('homeController', function ($scope, $http, $rootScope, $localStorage) {
+app.controller('homeController', function ($scope, $rootScope) {
     $rootScope.$on('message', function (o, user) {
-        $rootScope.user = user;
-
-
+        location.href = '/admin';
     });
 });

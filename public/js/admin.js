@@ -10,6 +10,5 @@ app.controller('adminController', function ($scope, $http, $rootScope, $localSto
         });
     };
 
-    console.log($localStorage.token);
     $scope.load();
 });

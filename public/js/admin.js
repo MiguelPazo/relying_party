@@ -10,5 +10,18 @@ app.controller('adminController', function ($scope, $http, $rootScope, $localSto
         });
     };
 
+    $scope.logout = function () {
+        $http({
+            url: 'logout',
+            method: 'GET'
+        }).success(function (response) {
+            var receiver = document.getElementById('receiver').contentWindow;
+            receiver.postMessage($localStorage.token, '*');
+            $localStorage.$reset();
+
+            location.href = response.url;
+        });
+    }
+
     $scope.load();
 });

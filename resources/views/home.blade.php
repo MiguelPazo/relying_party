@@ -12,12 +12,9 @@
                 </a>
 
             </div>
-            <div class="row">
-                <div class="col-sm-12">
-                    <iframe src="http://oprovider.dev/frame_sso" frameborder="0"></iframe>
-                </div>
-            </div>
         </div>
+
+        <iframe src="{{ env('IDP_URL') }}frame_sso" frameborder="0"></iframe>
     </div>
 @endsection
 

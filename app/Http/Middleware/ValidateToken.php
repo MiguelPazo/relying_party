@@ -16,7 +16,7 @@ class ValidateToken
             $client = new Client();
             $client->setDefaultOption('verify', false);
 
-            $response = $client->get(env('TOKEN_VALIDATE') . "?token=$token", [])->json();
+            $response = $client->get(env('IDP_URL') . "token/validate/?token=$token", [])->json();
 
             if ($response['success']) {
                 return $next($request);

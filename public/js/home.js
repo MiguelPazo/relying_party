@@ -1,5 +1,5 @@
 app.controller('homeController', function ($scope, $rootScope) {
-    $rootScope.$on('message', function (o, user) {
+    $rootScope.$on('gssloLogued', function (e) {
         location.href = '/admin';
     });
 });

@@ -10,8 +10,6 @@
                 </a>
             </div>
         </div>
-
-        <iframe id="receiver" src="{{ env('IDP_URL') }}frame_slo" frameborder="0"></iframe>
     </div>
 
 @endsection

@@ -13,8 +13,6 @@
 
             </div>
         </div>
-
-        <iframe src="{{ env('IDP_URL') }}frame_sso" frameborder="0"></iframe>
     </div>
 @endsection
 

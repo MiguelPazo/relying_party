@@ -1,4 +1,4 @@
-app.controller('adminController', function ($scope, $http, $rootScope, $localStorage) {
+app.controller('adminController', function ($scope, $http, $rootScope) {
     $scope.data;
 
     $scope.load = function () {
@@ -11,17 +11,16 @@ app.controller('adminController', function ($scope, $http, $rootScope, $localSto
     };
 
     $scope.logout = function () {
-        $http({
-            url: 'logout',
-            method: 'GET'
-        }).success(function (response) {
-            var receiver = document.getElementById('receiver').contentWindow;
-            receiver.postMessage($localStorage.token, '*');
-            $localStorage.$reset();
-
-            location.href = response.url;
-        });
+        gsslo.logout();
+        location.href = '/';
     }
 
-    $scope.load();
+
+    $rootScope.$on('gssloLogued', function (e) {
+        $scope.load();
+    });
+
+    $rootScope.$on('gssloLogout', function (e) {
+        location.href = '/';
+    });
 });

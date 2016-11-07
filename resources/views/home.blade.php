@@ -7,7 +7,7 @@
                 <span id="message"></span>
             </div>
             <div class="col-sm-6 col-sm-offset-3 text-center">
-                <a href="{{ env('IDP_URL') }}" id="btn_send" class="btn btn-success btn-lg">
+                <a href="{{ env('IDP_URL" id="btn_send" class="btn btn-success btn-lg">
                     INGRESAR
                 </a>
 
@@ -17,5 +17,5 @@
 @endsection
 
 @section('scripts')
-    <script src="{{ asset('/js/home.js') }}"></script>
+    <script src="js/home.js"></script>
 @endsection

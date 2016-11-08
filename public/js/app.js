@@ -27,7 +27,7 @@ app.config(function ($interpolateProvider, $httpProvider, $localStorageProvider)
             },
             'responseError': function (response) {
                 if (response.status === 401 || response.status === 403) {
-                    //location.href = '/';
+                    location.href = BASE_URL;
                 }
 
                 return $q.reject(response);

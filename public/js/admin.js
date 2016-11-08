@@ -3,7 +3,7 @@ app.controller('adminController', function ($scope, $http, $rootScope) {
 
     $scope.load = function () {
         $http({
-            url: 'admin/data',
+            url: BASE_URL + 'admin/data',
             method: 'GET'
         }).success(function (response) {
             $scope.data = response.data;
@@ -12,7 +12,7 @@ app.controller('adminController', function ($scope, $http, $rootScope) {
 
     $scope.logout = function () {
         gsslo.logout();
-        location.href = '/';
+        location.href = BASE_URL;
     }
 
 
@@ -21,6 +21,6 @@ app.controller('adminController', function ($scope, $http, $rootScope) {
     });
 
     $rootScope.$on('gssloLogout', function (e) {
-        location.href = '/';
+        location.href = BASE_URL;
     });
 });

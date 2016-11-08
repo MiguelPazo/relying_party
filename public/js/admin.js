@@ -17,10 +17,7 @@ app.controller('adminController', function ($scope, $http, $rootScope) {
 
 
     $rootScope.$on('gssloLogued', function (e) {
+        console.log('load');
         $scope.load();
-    });
-
-    $rootScope.$on('gssloLogout', function (e) {
-        location.href = BASE_URL;
     });
 });

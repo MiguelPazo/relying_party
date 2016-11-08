@@ -19,8 +19,8 @@ app.config(function ($interpolateProvider, $httpProvider, $localStorageProvider)
             'request': function (request) {
                 request.headers = request.headers || {};
 
-                if ($rootScope.jwt) {
-                    request.headers.Authorization = 'Bearer ' + $rootScope.jwt;
+                if ($rootScope.idToken) {
+                    request.headers.Authorization = 'Bearer ' + $rootScope.idToken;
                 }
 
                 return request;
@@ -38,7 +38,7 @@ app.config(function ($interpolateProvider, $httpProvider, $localStorageProvider)
 
 
 app.run(function ($rootScope, $localStorage, $window) {
-    $rootScope.jwt;
+    $rootScope.idToken;
     $rootScope.user;
 
     angular.element($window).on('gssloLoad', function (e) {
@@ -46,15 +46,16 @@ app.run(function ($rootScope, $localStorage, $window) {
     });
 
     angular.element($window).on('gssloLogued', function (e) {
-        $rootScope.jwt = e.detail.jwt;
+        $rootScope.idToken = e.detail.idToken;
         $rootScope.user = e.detail.user;
 
         $rootScope.$broadcast('gssloLogued');
     });
 
     angular.element($window).on('gssloLogout', function (e) {
-        $rootScope.jwt = null;
+        $rootScope.idToken = null;
         $rootScope.user = null;
-        $rootScope.$broadcast('gssloLogout');
+
+        location.href = BASE_URL;
     });
 });

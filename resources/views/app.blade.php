@@ -4,6 +4,9 @@
     <title>Relying Party</title>
     <link rel="stylesheet" href="js/libs/bootstrap/dist/css/bootstrap.min.css"/>
     <meta name="gsslo.federationId" content="5995a3c9"/>
+    <script>
+        var BASE_URL = '{{ env('BASE_URL')}}';
+    </script>
 </head>
 <body>
 

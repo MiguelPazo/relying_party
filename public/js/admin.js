@@ -12,12 +12,10 @@ app.controller('adminController', function ($scope, $http, $rootScope) {
 
     $scope.logout = function () {
         gsslo.logout();
-        location.href = BASE_URL;
     }
 
 
     $rootScope.$on('gssloLogued', function (e) {
-        console.log('load');
         $scope.load();
     });
 });
